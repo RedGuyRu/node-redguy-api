@@ -3,14 +3,25 @@
   "version": "1.0.0",
   "description": "Library to use redguy api",
   "main": "lib/index.js",
-  "scripts": {
-    "test": "node tests/tests.js"
-  },
-  "author": "RedGuy",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
   },
   "dependencies": {
     "axios": "^0.20.0"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node tests/tests.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RedGuyGames/node-redguy-api.git"
+  },
+  "author": "redguys",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RedGuyGames/node-redguy-api/issues"
+  },
+  "homepage": "https://github.com/RedGuyGames/node-redguy-api#readme"
 }
