@@ -1,6 +1,6 @@
 {
   "name": "node-redguy-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Library to use redguy api",
   "main": "lib/index.js",
   "directories": {
