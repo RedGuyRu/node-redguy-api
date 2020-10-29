@@ -27,16 +27,20 @@ Math.max(levels.factorial).then((result) => {
 });
 
 let Store = api.Store();
+let ts = Date.now().valueOf();
 
-Store.Json().get("test").then(data => {
-    if(data.test) {
-        console.log("store.json.get - OK!")
-    } else {
-        console.error("store.json.get - Error! Getted " + data.test())
+Store.Json().set("test",{time:ts}).then(data => {
+    Store.Json().get("test").then(data => {
+        if(data.time === ts) {
+            console.log("store.json.set - OK!")
+            console.log("store.json.get - OK!")
+        } else {
+            console.error("store.json.get - Error! Getted " + data.test)
+            process.exit(-1);
+        }
+    }).catch(e => {
+        console.log("store.json.get - Error!")
+        console.error(e);
         process.exit(-1);
-    }
-}).catch(e => {
-    console.log("store.json.get - Error!")
-    console.error(e);
-    process.exit(-1);
+    })
 })
