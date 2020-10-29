@@ -25,3 +25,18 @@ Math.max(levels.factorial).then((result) => {
     console.error(e);
     process.exit(-1);
 });
+
+let Store = api.Store();
+
+Store.Json().get("test").then(data => {
+    if(data.test) {
+        console.log("store.json.get - OK!")
+    } else {
+        console.error("store.json.get - Error! Getted " + data.test())
+        process.exit(-1);
+    }
+}).catch(e => {
+    console.log("store.json.get - Error!")
+    console.error(e);
+    process.exit(-1);
+})
