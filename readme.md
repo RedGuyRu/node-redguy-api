@@ -18,12 +18,12 @@ Event - WIP<br>
 Dnevnik Social- WIP<br>
 Games Integration - WIP<br>
 Teams - WIP<br>
-Store - WIP
+Store - v1.0
 
 ## Examples
 
 ### constructor
-Defaut params
+Default params
 
 ```js
 const RedGuyApi = require("node-redguy-api");
@@ -55,5 +55,25 @@ Math.get(levels.factorial,2).then((result) => {
 ```js
 Math.max(levels.factorial).then((result) => {
 	console.log(result);
+}).catch(e => console.log(e));
+```
+
+### Store/Json API
+
+```js
+let json = api.Store().Json();
+```
+
+#### set
+```js
+Store.Json().set("test",{time:ts}).then(data => {
+    console.log(data);
+}).catch(e => console.log(e));
+```
+
+#### get
+```js
+Store.Json().get("test").then(data => {
+    console.log(data);
 }).catch(e => console.log(e));
 ```
