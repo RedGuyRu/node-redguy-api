@@ -13,7 +13,7 @@ npm install node-redguy-api -S
 ## Supported classes
 Auth - WIP<br>
 Math - v1.0<br>
-Users - WIP<br>
+Users - v1.0<br>
 Event - WIP<br>
 Games Integration - WIP<br>
 Teams - WIP<br>
