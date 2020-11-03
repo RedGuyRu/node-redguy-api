@@ -1,5 +1,6 @@
 const RedGuyApi = require("../lib");
 const levels = require("../lib/Math/NumberLevels");
+const additional = require("../lib/Users/Additional");
 
 let api = new RedGuyApi(process.env.TOKEN);
 
@@ -45,6 +46,21 @@ Store.Json().set("test",{time:ts}).then(data => {
     })
 }).catch(e => {
     console.log("store.json.set - Error!")
+    console.error(e);
+    process.exit(-1);
+});
+
+let Users = api.Users();
+
+Users.get(1,new additional().avatar().mine_nick().background()).then(data => {
+    if(data.id === 1) {
+        console.log("users.get - OK!");
+    } else {
+        console.error("users.get - Error! "+JSON.stringify(data));
+        process.exit(-1);
+    }
+}).catch(e => {
+    console.log("uses.get - Error!");
     console.error(e);
     process.exit(-1);
 })
