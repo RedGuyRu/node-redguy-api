@@ -7,10 +7,10 @@ let api = new RedGuyApi(process.env.TOKEN);
 let Math = api.Math();
 
 Math.get(levels.factorial,2).then((result) => {
-   if(result === 2) {
+   if(parseInt(result.toString()) === 2) {
        console.log("math.get - OK!")
    } else {
-       console.error("math.get - Error! Getted"+result)
+       console.error("math.get - Error! Getted "+result)
        process.exit(-1);
    }
 }).catch((e) => {
