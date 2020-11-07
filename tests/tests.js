@@ -64,3 +64,18 @@ Users.get(1,new additional().avatar().mine_nick().background()).then(data => {
     console.error(e);
     process.exit(-1);
 })
+
+let Event = api.Event();
+
+Event.getStats("b12").then(data => {
+    if(isFinite(data.wins)) {
+        console.log("event.stats.get - OK!");
+    } else {
+        console.error("event.stats.get - Error! "+JSON.stringify(data));
+        process.exit(-1);
+    }
+}).catch(e => {
+    console.log("event.stats.get - Error!");
+    console.error(e);
+    process.exit(-1);
+})
