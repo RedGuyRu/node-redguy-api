@@ -7,7 +7,7 @@ let api = new RedGuyApi(process.env.TOKEN);
 let Math = api.Math();
 
 Math.get(levels.factorial,2).then((result) => {
-   if(parseInt(result.toString()) === 2) {
+   if(parseInt(result.toString(),10) === 2) {
        console.log("math.get - OK!")
    } else {
        console.error("math.get - Error! Getted "+result)
@@ -30,8 +30,8 @@ Math.max(levels.factorial).then((result) => {
 let Store = api.Store();
 let ts = Date.now().valueOf();
 
-Store.Json().set("test",{time:ts}).then(data => {
-    Store.Json().get("test").then(data => {
+Store.Json().set("test",{time:ts}).then((data) => {
+    Store.Json().get("test").then((data) => {
         if(data.time === ts) {
             console.log("store.json.set - OK!")
             console.log("store.json.get - OK!")
@@ -52,7 +52,7 @@ Store.Json().set("test",{time:ts}).then(data => {
 
 let Users = api.Users();
 
-Users.get(1,new additional().avatar().mine_nick().background()).then(data => {
+Users.get(1,new additional().avatar().mine_nick().background()).then((data) => {
     if(data.id === 1) {
         console.log("users.get - OK!");
     } else {
@@ -67,7 +67,7 @@ Users.get(1,new additional().avatar().mine_nick().background()).then(data => {
 
 let Event = api.Event();
 
-Event.getStats("b12").then(data => {
+Event.getStats("b12").then((data) => {
     if(isFinite(data.wins)) {
         console.log("event.stats.get - OK!");
     } else {
@@ -80,7 +80,7 @@ Event.getStats("b12").then(data => {
     process.exit(-1);
 })
 
-Event.Coins().get("b12").then(data => {
+Event.Coins().get("b12").then((data) => {
     if(isFinite(data)) {
         console.log("event.coins.get - OK!");
     } else {
