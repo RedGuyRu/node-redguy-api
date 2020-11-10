@@ -79,3 +79,16 @@ Event.getStats("b12").then(data => {
     console.error(e);
     process.exit(-1);
 })
+
+Event.Coins().get("b12").then(data => {
+    if(isFinite(data)) {
+        console.log("event.coins.get - OK!");
+    } else {
+        console.error("event.coins.get - Error! "+data);
+        process.exit(-1);
+    }
+}).catch(e => {
+    console.log("event.coins.get - Error!");
+    console.error(e);
+    process.exit(-1);
+})
