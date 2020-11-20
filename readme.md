@@ -14,9 +14,8 @@ npm install node-redguy-api -S
 Auth - WIP<br>
 Math - v1.0<br>
 Users - v1.0<br>
-Event - WIP<br>
-Games Integration - WIP<br>
-Teams - WIP<br>
+Event - v1.0<br>
+Teams - v1.0<br>
 Store - v1.0
 
 ## Examples
