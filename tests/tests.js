@@ -92,3 +92,16 @@ Event.Coins().get("b12").then((data) => {
     console.error(e);
     process.exit(-1);
 })
+
+Users.Balance().get(1).then((data) => {
+    if(isFinite(data)) {
+        console.log("users.balance.get - OK! result: "+data);
+    } else {
+        console.error("users.balance.get - Error! "+data);
+        process.exit(-1);
+    }
+}).catch(e => {
+    console.log("users.balance.get - Error!");
+    console.error(e);
+    process.exit(-1);
+});
