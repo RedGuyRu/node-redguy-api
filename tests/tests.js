@@ -105,3 +105,16 @@ Users.Balance().get(1).then((data) => {
     console.error(e);
     process.exit(-1);
 });
+
+api.Minecraft().serverinfo("redguy.ru").then((data) => {
+    if(data.version.name === "BungeeCord 1.8.x-1.16.x") {
+        console.log("minecraft.serverinfo - OK!");
+    } else {
+        console.error("minecraft.serverinfo - Error! "+data.description.text);
+        process.exit(-1);
+    }
+}).catch(e => {
+    console.log("minecraft.serverinfo - Error!");
+    console.error(e);
+    process.exit(-1);
+});

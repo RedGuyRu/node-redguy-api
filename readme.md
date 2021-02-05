@@ -17,7 +17,7 @@ Users - v1.0<br>
 Event - v1.0<br>
 Teams - v1.0<br>
 Store - v1.0<br>
-Minecraft - WIP
+Minecraft - v1.0
 
 ## Examples
 
