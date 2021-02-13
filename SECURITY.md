@@ -8,4 +8,4 @@
 
 ## Reporting a Vulnerability
 
-Create iusse or PR.
+Create issue or PR.

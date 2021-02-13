@@ -10,7 +10,7 @@ Math.get(levels.factorial,2).then((result) => {
    if(parseInt(result.toString(),10) === 2) {
        console.log("math.get - OK!")
    } else {
-       console.error("math.get - Error! Getted "+result)
+       console.error("math.get - Error! Got "+result)
        process.exit(-1);
    }
 }).catch((e) => {
@@ -30,13 +30,13 @@ Math.max(levels.factorial).then((result) => {
 let Store = api.Store();
 let ts = Date.now().valueOf();
 
-Store.Json().set("test",{time:ts}).then((data) => {
+Store.Json().set("test",{time:ts}).then(() => {
     Store.Json().get("test").then((data) => {
         if(data.time === ts) {
             console.log("store.json.set - OK!")
             console.log("store.json.get - OK!")
         } else {
-            console.error("store.json.get - Error! Getted " + data.test)
+            console.error("store.json.get - Error! Got " + data.test)
             process.exit(-1);
         }
     }).catch(e => {
@@ -68,6 +68,7 @@ Users.get(1,new additional().avatar().mine_nick().background()).then((data) => {
 let Event = api.Event();
 
 Event.getStats("b12").then((data) => {
+    // noinspection JSUnresolvedVariable
     if(isFinite(data.wins)) {
         console.log("event.stats.get - OK!");
     } else {
@@ -81,6 +82,7 @@ Event.getStats("b12").then((data) => {
 })
 
 Event.Coins().get("b12").then((data) => {
+    // noinspection JSCheckFunctionSignatures
     if(isFinite(data)) {
         console.log("event.coins.get - OK!");
     } else {
@@ -94,6 +96,7 @@ Event.Coins().get("b12").then((data) => {
 })
 
 Users.Balance().get(1).then((data) => {
+    // noinspection JSCheckFunctionSignatures
     if(isFinite(data)) {
         console.log("users.balance.get - OK! result: "+data);
     } else {
