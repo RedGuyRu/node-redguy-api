@@ -1,4 +1,4 @@
-const RedGuyApi = require("../lib");
+const RedGuyApi = require("../lib").RedGuyApi;
 const levels = require("../lib/Math/NumberLevels");
 const additional = require("../lib/Users/Additional");
 
@@ -6,7 +6,7 @@ let api = new RedGuyApi(process.env.TOKEN);
 
 let Math = api.Math();
 
-Math.get(levels.factorial,2).then((result) => {
+/*Math.get(levels.factorial,2).then((result) => {
    if(parseInt(result.toString(),10) === 2) {
        console.log("math.get - OK!");
    } else {
@@ -25,7 +25,7 @@ Math.max(levels.factorial).then((result) => {
     console.log("math.max - Error!");
     console.error(e);
     process.exit(-1);
-});
+});*/
 
 let Store = api.Store();
 let ts = Date.now().valueOf();
