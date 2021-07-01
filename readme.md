@@ -25,12 +25,12 @@ Default params
 
 ```js
 const RedGuyApi = require("node-redguy-api");
-let api = new RedGuyApi(process.env.TOKEN);
+let api = new RedGuyApi.RedGuyApi(bc.tokens.redguytoken);
 ```
 With config
 ```js
 const RedGuyApi = require("node-redguy-api");
-let api = new RedGuyApi(process.env.TOKEN,{
+let api = new RedGuyApi.RedGuyApi(process.env.TOKEN,{
 	v: '1.1'
 });
 ```
