@@ -44,7 +44,7 @@ Store.Json().set("test",{time:ts}).then(() => {
         console.error(e);
         process.exit(-1);
     });
-}).catch(e => {
+}).catch((e) => {
     console.log("store.json.set - Error!");
     console.error(e);
     process.exit(-1);
