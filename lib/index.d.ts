@@ -4,7 +4,6 @@ export class RedGuyApi {
     Math(): Math;
     Store(): Store;
     Users(): Users;
-    Event(): Event;
     Teams(): Teams;
     Minecraft(): Minecraft;
 }
@@ -66,58 +65,6 @@ export class Balance {
 
     get(id: number): Promise<number>;
 }
-
-
-export class Event {
-    constructor(options: {token: string, v: string});
-
-    getStats(nick: string): Promise<{coins: number, wins: number, tokens: number, kills: number}>
-    Coins(): Coins;
-    Tokens(): Tokens;
-    Wins(): Wins;
-    Kills(): Kills;
-}
-
-export class Coins {
-    constructor(options: {token: string, v: string});
-
-    get(nick: string): Promise<number>;
-
-    add(nick: string, coins: number): Promise<{oldCoins: number, newCoins: number}>
-
-    set(nick: string, coins: number): Promise<{oldCoins: number, newCoins: number}>
-}
-
-export class Tokens {
-    constructor(options: {token: string, v: string});
-
-    get(nick: string): Promise<number>;
-
-    add(nick: string, tokens: number): Promise<{oldTokens: number, newTokens: number}>
-
-    set(nick: string, tokens: number): Promise<{oldTokens: number, newTokens: number}>
-}
-
-export class Wins {
-    constructor(options: {token: string, v: string});
-
-    get(nick: string): Promise<number>;
-
-    add(nick: string, wins: number): Promise<{oldWins: number, newWins: number}>
-
-    set(nick: string, wins: number): Promise<{oldWins: number, newWins: number}>
-}
-
-export class Kills {
-    constructor(options: {token: string, v: string});
-
-    get(nick: string): Promise<number>;
-
-    add(nick: string, kills: number): Promise<{oldKills: number, newKills: number}>
-
-    set(nick: string, kills: number): Promise<{oldKills: number, newKills: number}>
-}
-
 
 export class Teams {
     constructor(options: {token: string, v: string});
