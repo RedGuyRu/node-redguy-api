@@ -27,7 +27,7 @@ Math.max(levels.factorial).then((result) => {
     process.exit(-1);
 });*/
 
-let Store = api.Store();
+/*let Store = api.Store();
 let ts = Date.now().valueOf();
 
 Store.Json().set("test",{time:ts}).then(() => {
@@ -77,7 +77,7 @@ Users.Balance().get(1).then((data) => {
     console.log("users.balance.get - Error!");
     console.error(e);
     process.exit(-1);
-});
+});*/
 
 api.Minecraft().serverinfo("redguy.ru").then((data) => {
     if(data.version.name === "BungeeCord 1.8.x-1.16.x") {
