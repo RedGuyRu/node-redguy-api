@@ -1,10 +1,9 @@
 const RedGuyApi = require("../lib").RedGuyApi;
 const levels = require("../lib/Math/NumberLevels");
-const additional = require("../lib/Users/Additional");
 
 let api = new RedGuyApi(process.env.TOKEN);
 
-let Math = api.Math();
+//let Math = api.Math();
 
 /*Math.get(levels.factorial,2).then((result) => {
    if(parseInt(result.toString(),10) === 2) {
@@ -80,7 +79,7 @@ Users.Balance().get(1).then((data) => {
 });*/
 
 api.Minecraft().serverinfo("redguy.ru").then((data) => {
-    if(data.version.name === "BungeeCord 1.8.x-1.16.x") {
+    if(data.description === "§cRedGuyGames §6game server!") {
         console.log("minecraft.serverinfo - OK!");
     } else {
         console.error("minecraft.serverinfo - Error! "+data.description.text);
