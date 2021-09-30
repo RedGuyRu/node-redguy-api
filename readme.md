@@ -9,28 +9,3 @@ Library to use [redguy api](https://wiki.redguy.ru/Api "redguy api").
 ```sh
 npm install node-redguy-api -S
 ```
-
-## Supported classes
-Math - v1.0<br>
-Users - v1.0<br>
-Event - v1.0<br>
-Teams - v1.0<br>
-Store - v1.0<br>
-Minecraft - v1.0
-
-## Examples
-
-### constructor
-Default params
-
-```js
-const RedGuyApi = require("node-redguy-api");
-let api = new RedGuyApi.RedGuyApi(bc.tokens.redguytoken);
-```
-With config
-```js
-const RedGuyApi = require("node-redguy-api");
-let api = new RedGuyApi.RedGuyApi(process.env.TOKEN,{
-	v: '1.1'
-});
-```
