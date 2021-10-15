@@ -1,12 +1,10 @@
 export class RedGuyApi {
-    constructor(token: string, options?: { v?: string });
+    constructor(token: string, options?: { });
 
     Minecraft(): Minecraft;
 }
 
 export class Minecraft {
-    constructor(options: { token: string, v: string })
-
     serverinfo(host: string): Promise<{
         host: string,
         description: string,
@@ -16,4 +14,8 @@ export class Minecraft {
             online: number
         }
     }>
+}
+
+export class Token {
+    static issue(appId: number, secret: string, scopes: string[], options?: {}): Promise<{id:number,token:string}>
 }
