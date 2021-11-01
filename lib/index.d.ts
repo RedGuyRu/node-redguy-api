@@ -2,6 +2,8 @@ export class RedGuyApi {
     constructor(token: string, options?: { });
 
     Minecraft(): Minecraft;
+
+    Users(): Users;
 }
 
 export class Minecraft {
@@ -18,4 +20,8 @@ export class Minecraft {
 
 export class Token {
     static issue(appId: number, secret: string, scopes: string[], options?: {}): Promise<{id:number,token:string}>
+}
+
+export class Users {
+    get(): Promise<{id:number,login:string}>;
 }
