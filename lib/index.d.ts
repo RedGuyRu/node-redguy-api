@@ -1,5 +1,5 @@
 export class RedGuyApi {
-    constructor(token: string, options?: { });
+    constructor(token: string, options?: {});
 
     Minecraft(): Minecraft;
 
@@ -19,9 +19,20 @@ export class Minecraft {
 }
 
 export class Token {
-    static issue(appId: number, secret: string, scopes: string[], options?: {}): Promise<{id:number,token:string}>
+    static issue(appId: number, secret: string, scopes: string[], options?: {}): Promise<{ id: number, token: string }>
 }
 
 export class Users {
-    get(): Promise<{id:number,login:string}>;
+    get(): Promise<{ id: number, login: string }>;
+}
+
+export class News {
+    static get(tag?: string): Promise<[{
+        id: number,
+        name: string,
+        content: string,
+        author: number,
+        tags: string[],
+        published: string
+    }]>;
 }
