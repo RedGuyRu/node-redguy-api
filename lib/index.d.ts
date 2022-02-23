@@ -4,6 +4,8 @@ export class RedGuyApi {
     Minecraft(): Minecraft;
 
     Users(): Users;
+
+    Hashes(): Hashes;
 }
 
 export class Minecraft {
@@ -25,6 +27,11 @@ export class Token {
 export class Users {
     get(): Promise<{ id: number, login: string }>;
 }
+
+export class Hashes {
+    getMD5(hash:string): Promise<string>;
+}
+
 
 export class News {
     static get(tag?: string): Promise<[{
