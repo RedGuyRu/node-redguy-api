@@ -9,7 +9,7 @@
     "test": "tests"
   },
   "dependencies": {
-    "axios": "^0.26.0",
+    "axios": "^0.27.1",
     "luxon": "^2.0.2"
   },
   "devDependencies": {},
