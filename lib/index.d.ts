@@ -6,6 +6,8 @@ export class RedGuyApi {
     Users(): Users;
 
     Hashes(): Hashes;
+
+    Links(): Links;
 }
 
 export class Minecraft {
@@ -32,7 +34,6 @@ export class Hashes {
     getMD5(hash:string): Promise<string>;
 }
 
-
 export class News {
     static get(tag?: string): Promise<[{
         id: number,
@@ -41,5 +42,11 @@ export class News {
         author: number,
         tags: string[],
         published: string
+    }]>;
+}
+
+export class Links {
+    isSafe(link: string): Promise<[{
+        domain: string, safe: boolean, source: string
     }]>;
 }
