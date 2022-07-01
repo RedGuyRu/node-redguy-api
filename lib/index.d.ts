@@ -8,6 +8,8 @@ export class RedGuyApi {
     Hashes(): Hashes;
 
     Links(): Links;
+
+    Quotes(): Quotes;
 }
 
 export class Minecraft {
@@ -48,5 +50,11 @@ export class News {
 export class Links {
     isSafe(link: string): Promise<[{
         domain: string, safe: boolean, source: string
+    }]>;
+}
+
+export class Quotes {
+    get(id?: number): Promise<[{
+        id: number, quote_text: string, author: { id: number, name: string|null, first_name: string|null, last_name: string|null}
     }]>;
 }
