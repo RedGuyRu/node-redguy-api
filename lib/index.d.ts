@@ -10,6 +10,8 @@ export class RedGuyApi {
     Links(): Links;
 
     Quotes(): Quotes;
+
+    Logs(): Logs;
 }
 
 export class Minecraft {
@@ -57,4 +59,8 @@ export class Quotes {
     get(id?: number): Promise<[{
         id: number, quote_text: string, author: { id: number, name: string|null, first_name: string|null, last_name: string|null}
     }]>;
+}
+
+export class Logs {
+    write(service: number, level: string, message: string, category?: string, payload?: {}): Promise<void>;
 }
