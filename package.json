@@ -1,6 +1,6 @@
 {
   "name": "node-redguy-api",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Library to use redguy api",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -10,9 +10,11 @@
   },
   "dependencies": {
     "axios": "^0.26.0",
-    "luxon": "^2.0.2"
+    "luxon": "^2.0.2",
+    "ws": "^8.9.0"
   },
   "devDependencies": {
+    "@types/ws": "^8.5.3",
     "debug": "^4.3.4",
     "log4js": "^6.6.1"
   },
