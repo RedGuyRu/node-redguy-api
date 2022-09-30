@@ -1,6 +1,6 @@
 {
   "name": "node-redguy-api",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Library to use redguy api",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

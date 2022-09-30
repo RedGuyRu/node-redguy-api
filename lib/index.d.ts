@@ -12,6 +12,8 @@ export class RedGuyApi {
     Quotes(): Quotes;
 
     Logs(): Logs;
+
+    Texts(): Texts;
 }
 
 export class Minecraft {
@@ -35,7 +37,7 @@ export class Users {
 }
 
 export class Hashes {
-    getMD5(hash:string): Promise<string>;
+    getMD5(hash: string): Promise<string>;
 }
 
 export class News {
@@ -57,10 +59,56 @@ export class Links {
 
 export class Quotes {
     get(id?: number): Promise<[{
-        id: number, quote_text: string, author: { id: number, name: string|null, first_name: string|null, last_name: string|null}
+        id: number, quote_text: string, author: { id: number, name: string | null, first_name: string | null, last_name: string | null }
     }]>;
 }
 
 export class Logs {
     write(service: number, level: string, message: string, category?: string, payload?: {}): Promise<void>;
+}
+
+export class Texts {
+    parse(text: string, lang?: string): Promise<[{
+        body: string, start: number, end: number, latent: boolean
+        dim: "email" | "phone-number",
+        value: { value: string, type: string }
+    } | {
+        body: string, start: number, end: number, latent: boolean
+        dim: "amount-of-money" | "distance" | "temperature" | "volume",
+        value: { value: number, type: string, unit: string }
+    } | {
+        body: string, start: number, end: number, latent: boolean
+        dim: "credit-card-number",
+        value: { value: string, issuer: string }
+    } | {
+        body: string, start: number, end: number, latent: boolean
+        dim: "duration",
+        value: {
+            value: number, type: string, unit: string, normalized: { value: number, unit: string }
+            year?: number, month?: number, week?: number, day?: number, hour?: number, minute?: number, second?: number
+        }
+    } | {
+        body: string, start: number, end: number, latent: boolean
+        dim: "numeral" | "ordinal",
+        value: { value: number, type: string }
+    } | {
+        body: string, start: number, end: number, latent: boolean
+        dim: "quantity",
+        value: { value: number, type: string, product: string, unit: string }
+    } | {
+        body: string, start: number, end: number, latent: boolean
+        dim: "time",
+        value: {
+            value: string, type: string, grain: string,
+            values: [{
+                value: string, type: string, grain: string,
+            }]
+        }
+    } | {
+        body: string, start: number, end: number, latent: boolean
+        dim: "url",
+        value: {
+            value: string, type: string, domain: string
+        }
+    }]>;
 }
