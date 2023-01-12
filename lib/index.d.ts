@@ -29,7 +29,7 @@ export class Minecraft {
 }
 
 export class Token {
-    static issue(appId: number, secret: string, scopes: string[], options?: {}): Promise<{ id: number, token: string }>
+    static issue(appId: number, secret: string, scopes: string[], options?: {name?:string}): Promise<{ id: number, token: string }>
 }
 
 export class Users {
