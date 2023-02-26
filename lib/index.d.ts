@@ -29,7 +29,7 @@ export class Minecraft {
 }
 
 export class Token {
-    static issue(appId: number, secret: string, scopes: string[], options?: {name?:string}): Promise<{ id: number, token: string }>
+    static issue(appId: number, secret: string, scopes: string[], options?: { name?: string }): Promise<{ id: number, token: string }>
 }
 
 export class Users {
@@ -58,9 +58,9 @@ export class Links {
 }
 
 export class Quotes {
-    get(id?: number): Promise<[{
-        id: number, quote_text: string, author: { id: number, name: string | null, first_name: string | null, last_name: string | null }
-    }]>;
+    get(id?: number): Promise<{
+        id: number, quote_text: string, source: { id: number, name: string | null, author: { id: number, name: string | null, first_name: string | null, last_name: string | null } | null }[]
+    }>;
 }
 
 export class Logs {
