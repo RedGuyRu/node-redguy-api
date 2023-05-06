@@ -52,9 +52,9 @@ export class News {
 }
 
 export class Links {
-    isSafe(link: string): Promise<[{
+    isSafe(link: string): Promise<{
         domain: string, safe: boolean, source: string
-    }]>;
+    }>;
 }
 
 export class Quotes {
