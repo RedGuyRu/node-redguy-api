@@ -1,3 +1,5 @@
+import {Intent, Model, Prediction, Text, TrainJob} from "./NLP/NLP";
+
 export class RedGuyApi {
     constructor(token: string, options?: {});
 
@@ -14,6 +16,8 @@ export class RedGuyApi {
     Logs(): Logs;
 
     Texts(): Texts;
+
+    NLP(): NLP;
 }
 
 export class Minecraft {
@@ -65,6 +69,23 @@ export class Quotes {
 
 export class Logs {
     write(service: number, level: string, message: string, category?: string, payload?: {}): Promise<void>;
+}
+
+export class NLP {
+    getModel(model:number): Promise<Model>;
+    createModel(name: string): Promise<Model>;
+    deleteModel(model: number): Promise<Model>;
+    getModels(): Promise<Model[]>;
+    createIntent(model: number, name: string): Promise<Intent>;
+    deleteIntent(intent: number): Promise<Intent>;
+    getIntents(model: number): Promise<Intent[]>;
+    addIntentExample(intent: number, example: string): Promise<Text>;
+    deleteIntentExample(exampleId: number): Promise<Text>;
+    getIntentExamples(intent: number): Promise<Text[]>;
+    getIntentExample(exampleId: number): Promise<Text>;
+    train(model: number): Promise<TrainJob>;
+    getTrainingStatus(job: number): Promise<TrainJob>;
+    predict(model: number, text: string): Promise<Prediction>;
 }
 
 export class Texts {
