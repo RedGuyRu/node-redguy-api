@@ -41,12 +41,12 @@ export class Users {
 }
 
 export class Hashes {
-    getMD5(hash: string): Promise<string>;
-    getMysql(hash: string): Promise<string>;
-    getNtml(hash: string): Promise<string>;
-    getSha1(hash: string): Promise<string>;
-    getSha256(hash: string): Promise<string>;
-    getSha512(hash: string): Promise<string>;
+    getMD5(hash: string): Promise<string|null>;
+    getMysql(hash: string): Promise<string|null>;
+    getNtml(hash: string): Promise<string|null>;
+    getSha1(hash: string): Promise<string|null>;
+    getSha256(hash: string): Promise<string|null>;
+    getSha512(hash: string): Promise<string|null>;
 
     indexMD5(value:string): Promise<string>;
     indexMysql(value:string): Promise<string>;
