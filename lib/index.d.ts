@@ -42,6 +42,18 @@ export class Users {
 
 export class Hashes {
     getMD5(hash: string): Promise<string>;
+    getMysql(hash: string): Promise<string>;
+    getNtml(hash: string): Promise<string>;
+    getSha1(hash: string): Promise<string>;
+    getSha256(hash: string): Promise<string>;
+    getSha512(hash: string): Promise<string>;
+
+    indexMD5(value:string): Promise<string>;
+    indexMysql(value:string): Promise<string>;
+    indexNtml(value:string): Promise<string>;
+    indexSha1(value:string): Promise<string>;
+    indexSha256(value:string): Promise<string>;
+    indexSha512(value:string): Promise<string>;
 }
 
 export class News {
