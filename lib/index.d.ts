@@ -1,4 +1,5 @@
 import {Intent, Model, Prediction, Text, TrainJob} from "./NLP/NLP";
+import {User} from "./Audience/Audience";
 
 export class RedGuyApi {
     constructor(token: string, options?: {});
@@ -18,6 +19,8 @@ export class RedGuyApi {
     Texts(): Texts;
 
     NLP(): NLP;
+
+    Audience(): Audience;
 }
 
 export class Minecraft {
@@ -98,6 +101,10 @@ export class NLP {
     train(model: number): Promise<TrainJob>;
     getTrainingStatus(job: number): Promise<TrainJob>;
     predict(model: number, text: string): Promise<Prediction>;
+}
+
+export class Audience {
+    postUser(service_id: number, user_id: string, data?: object): Promise<User>;
 }
 
 export class Texts {
