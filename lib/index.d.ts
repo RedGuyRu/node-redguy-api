@@ -104,6 +104,14 @@ export class NLP {
 }
 
 export class Audience {
+    /**
+     * Post user data
+     * @param service_id Service id
+     * @param user_id User id
+     * @param data User data
+     * @returns {Promise<User>}
+     * @throws {ApiError} 
+     */
     postUser(service_id: number, user_id: string, data?: object): Promise<User>;
 }
 
@@ -151,4 +159,11 @@ export class Texts {
             value: string, type: string, domain: string
         }
     }]>;
+}
+
+export class ApiError extends Error {
+    constructor(code: number, message: string, response: object);
+    get code(): number;
+    get message(): string;
+    get response(): object;
 }
