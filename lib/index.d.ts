@@ -113,6 +113,14 @@ export class Audience {
      * @throws {ApiError} 
      */
     postUser(service_id: number, user_id: string, data?: object): Promise<User>;
+
+    /**
+     * Get all users with data
+     * @param service_id Service id
+     * @returns {Promise<User[]>}
+     * @throws {ApiError}
+     */
+    getUsers(service_id: number): Promise<User[]>;
 }
 
 export class Texts {
