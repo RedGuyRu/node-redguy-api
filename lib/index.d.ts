@@ -21,8 +21,6 @@ export class RedGuyApi {
     NLP(): NLP;
 
     Audience(): Audience;
-
-    Models(): Models;
 }
 
 export class Minecraft {
@@ -123,26 +121,6 @@ export class Audience {
      * @throws {ApiError}
      */
     getUsers(service_id: number): Promise<User[]>;
-}
-
-export class Models {
-    predict(name: string): Promise<StickersPredictionJob>;
-
-    get(job: string): Promise<StickersPredictionJob>;
-}
-
-export class StickersPredictionJob {
-    job: string;
-    waiting: boolean;
-    active: boolean;
-    ready: boolean;
-    result: StickersPrediction[] | null;
-    percent: number;
-}
-
-export class StickersPrediction {
-    probability: number;
-    className: 'clear' | 'porn' | 'nazi' | 'animal abuse' | 'blood' | 'swearing' | 'politics' | 'epileptic' | 'crash'
 }
 
 export class Texts {
